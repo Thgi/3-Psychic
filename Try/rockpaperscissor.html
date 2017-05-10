@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock, paper Scissors</title>
+</head>
+<body>
+<div id="game">
+<p>Press r, p, or s to start playing</p>
+</div>
+<!--I need the user to make a choice
+computer to make a choice
+Capture those choices
+compare these choices, and determine a win, loss, or tie
+Display the result to the user-->
+
+<script type="text/javascript">
+var options = ["r", "p", "s"];
+var wins = 0;
+var losses = 0;
+var ties = 0;
+	document.onkeyup = function(event) {
+		var userguess = String.fromCharCode(event.keyCode).
+		toLowerCase();
+
+			console.log(userguess);
+
+
+			var computerGuess = options[Math.floor(Math.random()*options.length)];
+			console.log(computerGuess);
+
+			if (userguess == "r" || userguess == "p" || userguess== "s"){
+				if ((userguess== 'r') && (computerGuess == 's')){
+					wins++;
+				
+				}
+				if ((userguess== 'r') && (computerGuess == 'p')){
+					losses++;
+					
+				}
+				if ((userguess== 's') && (computerGuess == 'p')){
+					wins++;
+					
+				}
+
+				if ((userguess== 's') && (computerGuess == 'r')){
+					losses++;
+					
+				}
+				if ((userguess=='p') && (computerGuess == 's')){
+					losses++;
+					
+				}
+				if ((userguess== 'p') && (computerGuess == 'r')){
+					losses++;
+				
+				}
+				
+				
+				if ((userguess==computerGuess)){
+					ties++;
+				
+				}
+				} else {
+				alert("please choose r,p, or s");
+				}
+
+			var html = "<p>Press r, p, or s to start playing</p>" +
+			"<p>wins: "+ wins  + "</p>" +
+			"<p>loses: "+ losses + "</p>" +
+			"<p>ties: "+ ties + "</p>";
+
+			document.querySelector('#game').innerHTML = html;
+
+
+
+
+
+	}
+
+
+</script>
+
+</body>
+</html>
+
+
+
+

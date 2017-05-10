@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Adventures</title>
+</head>
+<body>
+<h1> Car adventures!</h1>
+<h2> Type "h"to honk, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</h2>
+<h2>See console for stats</h2>
+<script type="text/javascript">
+	
+	var car ={
+		make: "Honda",
+		model: "Fit",
+		color: "Blue Rasberry",
+		mileage: 3000,
+		isWorking: true,
+		honk: function(){
+			console.log("Hoooooook");
+		},
+		driveToWork: function(){
+			("Old mileage"+ car.mileage);
+
+			car.mileage = car.mileage +8;
+
+			console.log("New mileage"+ car.mileage);
+		},
+		driveAroundWorld: function(){
+			alert("Old mileage"+ car.mileage);
+			car.mileage = car.mileage + 8000;
+			alert("New mileage"+ car.mileage);
+			alert("Car needs a tuneup!");
+			car.isWorking =false;
+		},
+		getTuneUp: function(){
+			alert("Car is ready to go!");
+			car.isWorking = true;
+		}
+
+	}
+ 	function writeStats(){
+ 		console.log("make" + car.make);
+ 		console.log("model" +car.model);
+ 		console.log("color"+ car.color);
+		console.log("mileage" + car.mileage);
+		console.log("isWorking" + car.isWorking);
+		console.log("____________");
+	}
+ 	document.onkeyup = function(event) {
+ 		var letter = String.fromCharCode(event.keyCode).toLowerCase();
+ 		if (letter == "h") {
+ 			car.honk();
+ 			writeStats();
+ 		}
+ 		if (letter == "d") {
+ 			car.driveToWork();
+ 			writeStats();
+ 		}
+ 		if (letter == "w") {
+ 			car.driveAroundWorld();
+ 			writeStats();
+ 		}
+ 		if (letter == "t") {
+ 			car.getTuneUp();
+ 			writeStats();
+ 		}
+ 	}
+
+
+/*
+car.honk();
+car.driveToWork();
+car.driveAroundWorld();
+car.getTuneUp();
+*/
+
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Favorite TV Shows</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // creating an emty array of  our fav tv show 
+      var favTVshows = [];
+      var tvShow;
+      // For Loop Elements Repeats 3Times
+      for (var i = 1; i < 4; i++) {
+        // chose input what is your tv show
+        // each time it asks the user for their #1, #2, #3 tvshow
+        tvShow = prompt("What's your #" + i + " favorite TV show?");
+        // put objects tvshow to favtvshow
+        favTVshows.push(tvShow);
+      }
+      // make the loop of fav tv show
+      for (i = 0; i < favTVshows.length; i++) {
+        // make the result show up on the screen
+        alert(favTVshows[i]);
+      }
+    </script>
+  </body>
+</html>

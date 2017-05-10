@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Psychic Game</title>
+    <link rel="stylesheet" type="text/css" href="Psychic.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+<div id="game">
+<h1>The Psychic Game</h1>
+
+<p>Guess what letter I'm thinking of</p>
+<p>Wins: <span id="wins">0</span></p>
+<p>Losses : <span id="losses">0</span></p>
+<p>Guesses left <span id="guessleft">9</span></p>
+<p>Your Guesses so far <span id=guesses></span></p>
+
+
+
+
+
+</div>
+
+<!--I need the user to make a choice
+computer to make a choice
+Capture those choices
+compare these choices, and determine a win, loss, or tie
+Display the result to the user-->
+
+<script type="text/javascript">
+//creating an array for alphabet
+var alphabet = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var wins = 0;
+var losses = 0;
+var guessLeft = 9;
+var guesses = [];
+
+
+var reset = function() {
+ guessLeft = 9;
+ guesses = [];
+ computerGuess = alphabet[Math.floor(Math.random()*alphabet.length)];
+}
+
+    document.onkeyup = function(event) {
+        var userguess = String.fromCharCode(event.keyCode).
+        toLowerCase();
+        guessLeft--;
+        guesses.push(userguess);
+        document.querySelector('#guesses').innerHTML = guesses;
+        document.querySelector('#guessleft').innerHTML = guessLeft;
+// creating computerGuess the alphabet random
+            var computerGuess = alphabet[Math.floor(Math.random()*alphabet.length)];
+
+            // condition wins and loses
+            
+            if (userguess == computerGuess){
+                wins++;
+                document.querySelector('#wins').innerHTML = wins;
+                reset();
+                document.querySelector('#guesses').innerHTML = guesses;
+               
+            }
+            else if (guessLeft == 0){
+                        losses++;
+                        document.querySelector('#losses').innerHTML = losses;
+                        reset();
+                        document.querySelector('#guesses').innerHTML = guesses;
+                    }
+
+            // alphabet not repeating
+             //if(guesses.indexOf(i) !== -1) {
+//if user guess the same letter then the guess left didnt descrease
+
+        }
+
+</script>
+
+</body>
+</html>

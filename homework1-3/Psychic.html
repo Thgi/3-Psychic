@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Psychic Game</title>
+</head>
+<body>
+<div id="game">
+<h1>The Psychic Game</h1>
+<p>Guess what letter I'm thinking of</p>
+<p>Wins: <span id="wins">0</span></p>
+<p>Losses : <span id="losses">0</span></p>
+<p>Guesses left <span id="guess-left"></span></p>
+<p>Your Guesses so far</p><span id=guesses></span>
+</div>
+<!--I need the user to make a choice
+computer to make a choice
+Capture those choices
+compare these choices, and determine a win, loss, or tie
+Display the result to the user-->
+
+<script type="text/javascript">
+//creating a array for alphabet
+var alphabet = ["a", "b", "c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var wins = 0;
+var losses = 0;
+var guessLeft = 9;
+var guesses = [];
+
+
+var reset = function() {
+ guessLeft = 9;
+ guesses = [];
+ computerGuess = alphabet[Math.floor(Math.random()*alphabet.length)];
+}
+
+
+
+// creating the userguess press the key
+    for (var i = 0; i < 9; i++){
+
+
+
+
+
+    document.onkeyup = function(event) {
+        var userguess = String.fromCharCode(event.keyCode).
+        toLowerCase();
+
+        guesses.push(userguess);
+        console.log(userguess);
+
+// creating computerGuess the alphabet random
+            var computerGuess = alphabet[Math.floor(Math.random()*alphabet.length)];
+            console.log(computerGuess);
+
+            
+
+//creating the html
+            var html = "<p>Guess What letter I'm thinking of</p>" +
+            "<p>wins: "+ wins  + "</p>" +
+            "<p>loses: "+ losses + "</p>" +
+            "<p>Guessleft: "+ guessLeft + "</p>" +
+            "<p>Your Guess so far: "+ guesses + "</p>";
+
+
+            // condition wins and loses
+            
+            if (userguess == computerGuess){
+                wins++;
+                reset();
+                //alert("You are psychic!")
+            }
+            else{
+
+            // alphabet not repeating
+             if(guesses.indexOf(i) !== -1) {
+                 
+                  //letter was already guessed
+                }else{
+                    guessLeft--;
+                    if (guessLeft == 0){
+                        losses++;
+                        reset();
+                    // pick random bumber in alphabet
+                    //alert("No, try again!")
+                    }
+                    // it's a new guess
+                    }
+                 
+             }
+              
+
+
+//if user guess the same letter then the guess left didnt descrease
+        
+
+
+
+            document.querySelector('#game').innerHTML = html;
+
+        }
+
+
+
+    }//guesses.push(guessLeft);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+	font-size: 
+}
+
+header {
+  padding: 20px;
+  margin-bottom: 20px;
+  
+}
+#fixed {
+    position: fixed;
+   top:;
+}

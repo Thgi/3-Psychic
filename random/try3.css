@@ -1,0 +1,27 @@
+<!-- Basic CSS Exmaple -->
+<DOCTYPE html>
+<html lang="en-us">
+<head>
+ <meta charset=“UTF-8">
+ <title>CSS Stylesheets with Relative Paths</title>
+</head>
+
+
+
+
+
+
+body {
+	background: #effee7;
+	margin:0;
+	padding:0;
+}
+
+h1 {
+	color:#effee7;
+	background-color: #333333;
+	margin: 0;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

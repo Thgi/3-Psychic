@@ -1,0 +1,21 @@
+
+header{
+	padding:100%;
+	margin-bottom:;
+}
+section{
+	padding:100%;
+}
+section{}
+
+#left{
+	width:33%;
+	color:#333;
+	float:left;
+	padding-left: 33%;
+}
+#middle{
+	width:33%;
+	color:#333;
+	float:left;
+}
