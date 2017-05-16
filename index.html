@@ -71,7 +71,7 @@ var reset = function() {
                     }
 
             // alphabet not repeating
-             if(guesses.indexOf(userguesses) !== -1) {
+             //if(guesses.indexOf(userguesses) !== -1) {
 
 
 //if user guess the same letter then the guess left didnt descrease
@@ -80,18 +80,18 @@ var reset = function() {
 
 
 
-var checkIfDuplicate =function(userGuess){
-    var found = false;
-    for(var i=0; i<guesses.length; i++){
-        if(userGuess == guesses[i]){
-            found= true;
-            break;
-        }
-    }
-    return found;
-}
+                var checkIfDuplicate =function(userGuess){
+                    var found = false;
+                    for(var i=0; i<guesses.length; i++){
+                        if(userGuess == guesses[i]){
+                            found= true;
+                            break;
+                        }
+                    }
+                    return found;
+                }
 
-        }
+            }
 
 </script>
 
