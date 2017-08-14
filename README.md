@@ -6,7 +6,7 @@ The website is also the the first time I have used embedded javascript within an
 
 In order to have Javascript run in your HTML, you need to include the following:
 
-<!-- <script type="text/javascript"> -->
+<script type="text/javascript">
 
 The Javascript file runs the logic for playing the psychic game.
 
