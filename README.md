@@ -8,8 +8,9 @@ In order to have Javascript run in your HTML, you need to include the following:
 
 <script type="text/javascript">
 
+
 The Javascript file runs the logic for playing the psychic game.
 
 It heavily uses arrays to store the 26 letters of the alphabet, and to store the different guesses the user makes.
 
-I also learned how to use the function document.onkeyup where this allows a function to run once a key is pressed. This is how I have the function 
+I also learned how to use the function document.onkeyup where this allows a function to run once a key is pressed. This is where I have the function check the letter each time if it matches the computer guess.
